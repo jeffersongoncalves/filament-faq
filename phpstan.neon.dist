@@ -1,0 +1,14 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - src
+        - tests/Fixtures
+        - tests/TestCase.php
+    level: 5
+    ignoreErrors: []
+    # Windows: parallel workers race on the shared Testbench bootstrap-cache
+    # file (rename() "Access denied"). CI runs on ubuntu and is unaffected.
+    parallel:
+        maximumNumberOfProcesses: 1
