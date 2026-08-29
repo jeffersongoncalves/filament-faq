@@ -1,18 +1,20 @@
 <div class="filament-hidden">
 
-![Filament FAQ](https://raw.githubusercontent.com/jeffersongoncalves/filament-faq/2.x/art/jeffersongoncalves-filament-faq.png)
+![Filament FAQ](https://raw.githubusercontent.com/jeffersongoncalves/filament-faq/1.x/art/jeffersongoncalves-filament-faq.png)
 
 </div>
 
 # Filament FAQ
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-faq.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-faq)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-faq/tests.yml?branch=2.x&label=tests&style=flat-square)](https://github.com/jeffersongoncalves/filament-faq/actions?query=workflow%3Atests+branch%3A2.x)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-faq/pint.yml?branch=2.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-faq/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3A2.x)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-faq/tests.yml?branch=1.x&label=tests&style=flat-square)](https://github.com/jeffersongoncalves/filament-faq/actions?query=workflow%3Atests+branch%3A1.x)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-faq/pint.yml?branch=1.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-faq/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3A1.x)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/filament-faq.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-faq)
 [![License](https://img.shields.io/packagist/l/jeffersongoncalves/filament-faq.svg?style=flat-square)](LICENSE)
 
 Filament admin UI (CRUD) for [`jeffersongoncalves/laravel-faq`](https://github.com/jeffersongoncalves/laravel-faq) — manage FAQ categories and entries, with translatable question/answer/name fields, inside a [Filament](https://filamentphp.com) panel.
+
+> **Known issue:** `jeffersongoncalves/laravel-faq` 1.0.0 currently requires `illuminate/*: ^12.0|^13.0`, which has no overlap with Filament v3's Laravel ^10.0 requirement. This branch's code targets the Filament v3 API, but `composer install` cannot resolve until `laravel-faq` widens its Laravel constraint (or ships a v10/v11-compatible release). Track this before using `1.x` in production.
 
 ## Compatibility
 
@@ -27,7 +29,7 @@ Filament admin UI (CRUD) for [`jeffersongoncalves/laravel-faq`](https://github.c
 You can install the package via composer:
 
 ```bash
-composer require jeffersongoncalves/filament-faq:"^2.0"
+composer require jeffersongoncalves/filament-faq:"^1.0"
 ```
 
 Register the plugin in your panel provider:

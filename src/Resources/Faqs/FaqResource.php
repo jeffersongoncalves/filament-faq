@@ -2,10 +2,8 @@
 
 namespace JeffersonGoncalves\FilamentFaq\Resources\Faqs;
 
-use BackedEnum;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use JeffersonGoncalves\Faq\Models\Faq;
 use JeffersonGoncalves\FilamentFaq\FilamentFaqPlugin;
@@ -21,7 +19,7 @@ class FaqResource extends Resource
 {
     use Translatable;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedChatBubbleLeftRight;
+    protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-left-right';
 
     protected static ?int $navigationSort = 2;
 
@@ -51,9 +49,9 @@ class FaqResource extends Resource
         return __('filament-faq::faq.item.plural_label');
     }
 
-    public static function form(Schema $schema): Schema
+    public static function form(Form $form): Form
     {
-        return FaqForm::configure($schema);
+        return FaqForm::configure($form);
     }
 
     public static function table(Table $table): Table

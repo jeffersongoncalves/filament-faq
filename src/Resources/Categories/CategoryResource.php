@@ -2,10 +2,8 @@
 
 namespace JeffersonGoncalves\FilamentFaq\Resources\Categories;
 
-use BackedEnum;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use JeffersonGoncalves\Faq\Models\FaqCategory;
 use JeffersonGoncalves\FilamentFaq\FilamentFaqPlugin;
@@ -21,7 +19,7 @@ class CategoryResource extends Resource
 {
     use Translatable;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedFolder;
+    protected static ?string $navigationIcon = 'heroicon-o-folder';
 
     protected static ?int $navigationSort = 1;
 
@@ -51,9 +49,9 @@ class CategoryResource extends Resource
         return __('filament-faq::faq.category.plural_label');
     }
 
-    public static function form(Schema $schema): Schema
+    public static function form(Form $form): Form
     {
-        return CategoryForm::configure($schema);
+        return CategoryForm::configure($form);
     }
 
     public static function table(Table $table): Table
