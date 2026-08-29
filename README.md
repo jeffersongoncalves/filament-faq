@@ -1,14 +1,14 @@
 <div class="filament-hidden">
 
-![Filament FAQ](https://raw.githubusercontent.com/jeffersongoncalves/filament-faq/3.x/art/jeffersongoncalves-filament-faq.png)
+![Filament FAQ](https://raw.githubusercontent.com/jeffersongoncalves/filament-faq/2.x/art/jeffersongoncalves-filament-faq.png)
 
 </div>
 
 # Filament FAQ
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-faq.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-faq)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-faq/tests.yml?branch=3.x&label=tests&style=flat-square)](https://github.com/jeffersongoncalves/filament-faq/actions?query=workflow%3Atests+branch%3A3.x)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-faq/pint.yml?branch=3.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-faq/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3A3.x)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-faq/tests.yml?branch=2.x&label=tests&style=flat-square)](https://github.com/jeffersongoncalves/filament-faq/actions?query=workflow%3Atests+branch%3A2.x)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-faq/pint.yml?branch=2.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-faq/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3A2.x)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/filament-faq.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-faq)
 [![License](https://img.shields.io/packagist/l/jeffersongoncalves/filament-faq.svg?style=flat-square)](LICENSE)
 
@@ -27,7 +27,7 @@ Filament admin UI (CRUD) for [`jeffersongoncalves/laravel-faq`](https://github.c
 You can install the package via composer:
 
 ```bash
-composer require jeffersongoncalves/filament-faq:"^3.0"
+composer require jeffersongoncalves/filament-faq:"^2.0"
 ```
 
 Register the plugin in your panel provider:

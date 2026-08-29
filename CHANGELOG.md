@@ -9,8 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `FilamentFaqPlugin` with `CategoryResource` and `FaqResource` for Filament v5.
+- `FilamentFaqPlugin` with `CategoryResource` and `FaqResource` for Filament v4.
 - Translatable `name`/`question`/`answer` fields via `jeffersongoncalves/filament-translatable`.
 - Config-based resource overrides (`filament-faq.resources.category` / `.faq`) and navigation group.
 
-[Unreleased]: https://github.com/jeffersongoncalves/filament-faq/commits/3.x
+[Unreleased]: https://github.com/jeffersongoncalves/filament-faq/commits/2.x
