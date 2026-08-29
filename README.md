@@ -22,6 +22,8 @@ Filament admin UI (CRUD) for [`jeffersongoncalves/laravel-faq`](https://github.c
 | [2.x](https://github.com/jeffersongoncalves/filament-faq/tree/2.x) | 4.x |
 | [3.x](https://github.com/jeffersongoncalves/filament-faq/tree/3.x) | 5.x |
 
+> **Note (1.x):** pinned to Laravel 12.x. Filament v3.3.55 declares Laravel 13 support in its `composer.json`, but breaks at runtime against it (`$getRecordActions` undefined in table views, `SubNavigationPosition::$value` undefined) — an upstream Filament v3 issue, not something fixable here.
+
 ## Installation
 
 You can install the package via composer:
