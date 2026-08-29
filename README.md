@@ -14,8 +14,6 @@
 
 Filament admin UI (CRUD) for [`jeffersongoncalves/laravel-faq`](https://github.com/jeffersongoncalves/laravel-faq) — manage FAQ categories and entries, with translatable question/answer/name fields, inside a [Filament](https://filamentphp.com) panel.
 
-> **Known issue:** `jeffersongoncalves/laravel-faq` 1.0.0 currently requires `illuminate/*: ^12.0|^13.0`, which has no overlap with Filament v3's Laravel ^10.0 requirement. This branch's code targets the Filament v3 API, but `composer install` cannot resolve until `laravel-faq` widens its Laravel constraint (or ships a v10/v11-compatible release). Track this before using `1.x` in production.
-
 ## Compatibility
 
 | Package Version | Filament Version |
