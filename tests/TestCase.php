@@ -4,7 +4,6 @@ namespace JeffersonGoncalves\FilamentFaq\Tests;
 
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
-use Composer\InstalledVersions;
 use Filament\Actions\ActionsServiceProvider;
 use Filament\Facades\Filament;
 use Filament\FilamentServiceProvider;
@@ -24,6 +23,7 @@ use JeffersonGoncalves\FilamentFaq\FilamentFaqServiceProvider;
 use JeffersonGoncalves\FilamentFaq\Tests\Fixtures\TestPanelProvider;
 use JeffersonGoncalves\FilamentFaq\Tests\Fixtures\TestUser;
 use JeffersonGoncalves\FilamentTranslatable\FilamentTranslatableServiceProvider;
+use JeffersonGoncalves\PestPluginDatabaseMigrations\LoadsPackageMigrations;
 use Livewire\LivewireServiceProvider;
 use Livewire\Mechanisms\DataStore;
 use Orchestra\Testbench\TestCase as BaseTestCase;
@@ -31,6 +31,7 @@ use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
 
 abstract class TestCase extends BaseTestCase
 {
+    use LoadsPackageMigrations;
     use RefreshDatabase;
 
     protected function setUp(): void
@@ -95,10 +96,7 @@ abstract class TestCase extends BaseTestCase
             $table->rememberToken();
         });
 
-        $this->loadFaqVendorMigrations([
-            'create_faq_categories_table',
-            'create_faqs_table',
-        ]);
+        $this->loadPackageMigrations(FaqServiceProvider::class);
     }
 
     /**
@@ -116,42 +114,5 @@ abstract class TestCase extends BaseTestCase
         }
 
         $this->app->singleton(DataStore::class, DataStoreOverride::class);
-    }
-
-    /**
-     * Copy the vendored `*.php.stub` migrations for `jeffersongoncalves/laravel-faq`
-     * into a temp directory, each prefixed with a `%04d_` counter so
-     * loadMigrationsFrom's filename sort preserves the foreign-key-safe order
-     * supplied by the caller.
-     *
-     * @param  list<string>  $migrations  ordered migration stub names
-     */
-    protected function loadFaqVendorMigrations(array $migrations): void
-    {
-        $tempPath = sys_get_temp_dir().'/filament-faq-vendor-migrations';
-
-        if (is_dir($tempPath)) {
-            array_map('unlink', (array) glob($tempPath.'/*.php'));
-        } else {
-            mkdir($tempPath, 0755, true);
-        }
-
-        $base = InstalledVersions::getInstallPath('jeffersongoncalves/laravel-faq');
-
-        if ($base === null) {
-            return;
-        }
-
-        $migrationsPath = $base.'/database/migrations';
-
-        foreach ($migrations as $index => $name) {
-            $stub = $migrationsPath.'/'.$name.'.php.stub';
-
-            if (file_exists($stub)) {
-                copy($stub, sprintf('%s/%04d_%s.php', $tempPath, $index, $name));
-            }
-        }
-
-        $this->loadMigrationsFrom($tempPath);
     }
 }
